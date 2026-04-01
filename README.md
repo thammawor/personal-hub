@@ -1,40 +1,42 @@
-# personal-hub
+# sv
 
-A personal hub project.
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Description
+## Creating a project
 
-This repository is currently empty. Add your project description here.
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Getting Started
+```sh
+# create a new project
+npx sv create my-app
+```
 
-### Prerequisites
+To recreate this project with the same configuration:
 
-List any prerequisites or dependencies here.
+```sh
+# recreate this project
+npx sv@0.13.1 create --template minimal --types ts --add prettier eslint tailwindcss="plugins:typography,forms" sveltekit-adapter="adapter:vercel" mdsvex --install npm ./
+```
 
-### Installation
+## Developing
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/your-username/personal-hub.git
-   ```
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-2. Add installation steps here
+```sh
+npm run dev
 
-## Usage
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-Add usage instructions here.
+## Building
 
-## Contributing
+To create a production version of your app:
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+```sh
+npm run build
+```
 
-## License
+You can preview the production build with `npm run preview`.
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## Contact
-
-Your Name - [@your-handle](https://twitter.com/your-handle) - email@example.com
-
-Project Link: [https://github.com/your-username/personal-hub](https://github.com/your-username/personal-hub)
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
